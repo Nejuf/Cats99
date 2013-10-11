@@ -1,0 +1,9 @@
+<table>
+    <th>Cat Name</th><th>Show Page</th>
+  <% @cats.each do |cat| %>
+    <tr>
+    <td><%= cat.name %></td>
+    <td><%= link_to "Cat Show Page", cat_url(cat) %></td>
+    </tr>
+    <% end %>
+</table>

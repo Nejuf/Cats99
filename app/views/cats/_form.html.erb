@@ -1,0 +1,31 @@
+  <label for="cat_name">Name</label>
+  <input type="text" id="cat_name" name="cat[name]" value="<%=@cat.name%>">
+  <br>
+  <label for="cat_age">Age</label>
+  <input type="text" id="cat_age" name="cat[age]" value="<%=@cat.age%>">
+  <br>
+  <label for="cat_color">Color</label>
+  <select name="cat[color]" id="cat_color" value="<%= @cat.color %>">
+    <option></option>
+    <option value="black" selected=<%="selected" if @cat.color == "brown"%>>Brown</option>
+    <option value="brown" selected=<%="selected" if @cat.color == "black"%>>Black</option>
+    <option value="white" selected=<%="selected" if @cat.color == "white"%>>White</option>
+    <option value="grey" selected=<%="selected" if @cat.color == "grey"%>>Grey</option>
+
+  </select>
+
+  <br>
+  <label for="cat_sex">Sex</label>
+  <br>
+  <input type="radio" name="cat[sex]" id="cat_sex_female" value="F" checked<%="=checked" if @cat.sex == "F" %>>
+    <label for="cat_sex_female">Female</label>
+    <br>
+
+    <input type="radio" name="cat[sex]" id="cat_sex_male" value="M" checked<%="=checked" if @cat.sex == "M" %>>
+    <label for="cat_sex_male">Male</label>
+
+    <br>
+    <label for="cat_birthdate">Birthdate</label>
+  <input type="date" id="cat_birthdate" name="cat[birth_date]"        value="<%= @cat.birth_date %>">
+
+<br>

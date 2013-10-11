@@ -1,0 +1,10 @@
+<table>
+    <th>Cat Rentals</th><th>Cat Name</th><th>Start Date</th><th>End Date</th>
+  <% @catrentalrequests.each do |request| %>
+    <tr>
+    <td><%= request.cat_id %></td>
+    <td><%= request.start_date %></td>
+    <td><%= request.end_date %></td>
+    </tr>
+    <% end %>
+</table>

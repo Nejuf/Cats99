@@ -1,0 +1,16 @@
+<table>
+    <th>Cat Name</th><th>Cat Age</th><th>Cat Color</th><th>Cat Sex</th>    <th>Cat Birthdate</th><th>Cat Rental Start Date</th><th>Cat Rental End Date</th>
+    <tr>
+    <td><%= @cat.name %></td>
+    <td><%= @cat.age %></td>
+    <td><%= @cat.color %></td>
+    <td><%= @cat.sex %></td>
+    <td><%= @cat.birth_date %></td>
+    <% @cat.cat_rental_requests.order("start_date ASC").each do |request| next if request.status != 'PENDING'%>
+    <td><%= request.start_date %></td>
+    <td><%= request.end_date %></td>
+    <td><%= button_to "Approve cat request", cat_rental_request_url(@cat), :method => :put %></td>
+    <td><%= button_to "Deny cat request", cat_rental_request_url(@cat), :method => :put %></td>
+    <%end%>
+  </tr>
+</table>
