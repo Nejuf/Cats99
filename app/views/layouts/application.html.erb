@@ -9,7 +9,6 @@
 <body>
 
 	<% if current_user %>
-	Hi <%= @current_user.user_name %>
 	<%= button_to "Log out", session_url(session[:session_token]), :method => :delete %>
 	<% else %>
 	<%= link_to "Log in", new_session_url %>

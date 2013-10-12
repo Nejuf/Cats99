@@ -1,4 +1,6 @@
 class CatRentalRequestsController < ApplicationController
+  before_filter :current_user_owner_of_cat?, :only => [:approve!, :deny!]
+
   def index
     @catrentalrequests = CatRentalRequest.all
     render :index

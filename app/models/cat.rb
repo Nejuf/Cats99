@@ -1,5 +1,5 @@
 class Cat < ActiveRecord::Base
-  attr_accessible :age, :birth_date, :color, :name, :sex
+  attr_accessible :age, :birth_date, :color, :name, :sex, :owner_id
   validates :age, numericality: true
   validates :name, presence: true
   validates :sex, inclusion: { in: ["M", "F"] }
@@ -9,4 +9,8 @@ class Cat < ActiveRecord::Base
   :primary_key => :id,
   :foreign_key => :cat_id,
   dependent: :destroy)
+  belongs_to(:owner,
+  :class_name => "User",
+  :primary_key => :id,
+  :foreign_key => :owner_id)
 end

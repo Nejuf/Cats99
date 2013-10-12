@@ -1,0 +1,7 @@
+<h1>Your Active Sessions</h1>
+<% @sessions.each do |session| %>
+Log-In Device: <%= session.device %>
+Log-In Location: <%= session.location %>
+Last Log-In: <%= session.updated_at %>
+<%= button_to "Log Out", session_url(session.id), :method => :delete %>
+<% end %>

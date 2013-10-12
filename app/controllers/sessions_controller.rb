@@ -1,7 +1,13 @@
 class SessionsController < ApplicationController
 
+  def index
+    @sessions = Session.find_by_user_id(@current_user.id)
+    render :index
+  end
+
   def new
     render :new
+    #render :text => request.env
   end
 
   def create
@@ -14,7 +20,7 @@ class SessionsController < ApplicationController
     else
       p "Error"
       flash[:errors] = ["Invalid username/password combination!"]
-       render :new
+      render :new
     end
   end
 
